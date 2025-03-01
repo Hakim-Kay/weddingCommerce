@@ -1,0 +1,47 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Wedding Commerce
+    url: #
+    about: Check our documentation for answers to common questions
+  - name: Project Board
+    url: #
+    about: View the project roadmap and current progress
+
+# Configure the default labels that will be applied to new issues
+labels:
+  - name: bug
+    color: #d73a4a
+    description: Something isn't working
+  - name: enhancement
+    color: #a2eeef
+    description: New feature or request
+  - name: documentation
+    color: #0075ca
+    description: Improvements or additions to documentation
+  - name: priority:high
+    color: #ff8c00
+    description: High priority task
+  - name: priority:medium
+    color: #ffeb3b
+    description: Medium priority task
+  - name: priority:low
+    color: #00e676
+    description: Low priority task
+  - name: foundation
+    color: blueviolet
+    description: Foundational infrastructure work
+  - name: ui
+    color: #1d76db
+    description: User interface related
+  - name: auth
+    color: #0052cc
+    description: Authentication related
+  - name: gallery
+    color: #5319e7
+    description: Gallery or image browsing related
+  - name: payment
+    color: #fbca04
+    description: Payment processing related
+  - name: testing
+    color: #0e8a16
+    description: Testing related issues
