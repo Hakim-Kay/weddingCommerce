@@ -35,7 +35,7 @@ This is a wedding photography e-commerce platform built with Nuxt.js, similar to
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/wedding-photography-platform.git
+git clone https://github.com/hakim-kay/weddingcommerce.git
 cd wedding-photography-platform
 
 # Install dependencies
