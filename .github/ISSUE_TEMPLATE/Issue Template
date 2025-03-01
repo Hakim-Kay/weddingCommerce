@@ -1,0 +1,64 @@
+---
+name: Feature Implementation
+about: Template for implementing a new feature or component
+title: "[WPP-XXX] - "
+labels: ''
+assignees: ''
+---
+
+# [WPP-XXX] - Feature Title
+
+## Problem
+<!-- Describe the problem this feature or component solves. Be specific about what issues it addresses. -->
+
+## Context & Background
+<!-- Provide relevant background information that helps understand the scope and purpose. -->
+**Project Area:** <!-- e.g., Authentication, Gallery, Payment, etc. -->
+**Related Features:** <!-- List any features this depends on or that depend on this -->
+**Key Requirements:**
+<!-- List the key requirements for this feature -->
+-
+-
+-
+
+**Priority:** <!-- High, Medium, or Low - with brief justification -->
+
+## Technical Details
+<!-- Provide technical specifications, API details, data structures, etc. -->
+-
+-
+-
+
+## Steps to Implement
+<!-- Break down the implementation into discrete steps -->
+1.
+2.
+3.
+4.
+
+## Test Strategy
+<!-- Define how this feature should be tested -->
+### Unit Tests
+<!-- Describe the unit tests required -->
+-
+
+### Integration Tests
+<!-- Describe any integration tests required -->
+-
+
+### Manual Testing
+<!-- Describe any manual testing procedures -->
+-
+
+## Acceptance Criteria
+<!-- List the criteria that must be met for this feature to be considered complete -->
+- [ ]
+- [ ]
+- [ ]
+
+## Additional Resources
+<!-- Include mockups, documentation links, or other resources that might be helpful -->
+-
+
+## Labels
+<!-- e.g., `auth` `gallery` `payment` `ui` `priority:high` -->
