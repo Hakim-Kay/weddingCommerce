@@ -10,7 +10,7 @@ contact_links:
 # Configure the default labels that will be applied to new issues
 labels:
   - name: bug
-    color: #d73a4a
+    color: "#d73a4a"
     description: Something isn't working
   - name: enhancement
     color: "#a2eeef"
