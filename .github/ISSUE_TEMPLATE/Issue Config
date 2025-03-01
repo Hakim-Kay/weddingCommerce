@@ -13,35 +13,35 @@ labels:
     color: #d73a4a
     description: Something isn't working
   - name: enhancement
-    color: #a2eeef
+    color: "#a2eeef"
     description: New feature or request
   - name: documentation
-    color: #0075ca
+    color: "#0075ca"
     description: Improvements or additions to documentation
   - name: priority:high
-    color: #ff8c00
+    color: "#ff8c00"
     description: High priority task
   - name: priority:medium
-    color: #ffeb3b
+    color: "#ffeb3b"
     description: Medium priority task
   - name: priority:low
-    color: #00e676
+    color: "#00e676"
     description: Low priority task
   - name: foundation
     color: blueviolet
     description: Foundational infrastructure work
   - name: ui
-    color: #1d76db
+    color: "#1d76db"
     description: User interface related
   - name: auth
-    color: #0052cc
+    color: "#0052cc"
     description: Authentication related
   - name: gallery
-    color: #5319e7
+    color: "#5319e7"
     description: Gallery or image browsing related
   - name: payment
-    color: #fbca04
+    color: "#fbca04"
     description: Payment processing related
   - name: testing
-    color: #0e8a16
+    color: "#0e8a16"
     description: Testing related issues
