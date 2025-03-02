@@ -25,6 +25,8 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+.cursorrules*
+.cursor/
 
 # Editors
 .vscode/*
