@@ -9,6 +9,8 @@ export default defineNuxtConfig({
 
   modules: [
     '@pinia/nuxt',
+    '@nuxt/ui',
+    '@nuxtjs/tailwindcss',
   ],
 
   css: [
@@ -43,5 +45,29 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2025-03-01'
+  compatibilityDate: '2025-03-01',
+
+  // UI Configuration
+  ui: {
+    global: true
+  },
+
+  // Tailwind Configuration
+  tailwindcss: {
+    exposeConfig: true,
+    viewer: true,
+    config: {
+      content: [
+        './components/**/*.{js,vue,ts}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}',
+        './app.vue',
+        './error.vue'
+      ],
+      theme: {
+        extend: {}
+      }
+    }
+  },
 })
