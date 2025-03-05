@@ -11,11 +11,20 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/ui',
     '@nuxtjs/tailwindcss',
+    '@uploadthing/nuxt',
+    '@nuxt/image',
   ],
 
   css: [
     '~/assets/css/main.css'
   ],
+
+  // Nuxt Image configuration for UploadThing
+  image: {
+    domains: [
+      `${process.env.NUXT_UPLOADTHING_APP_ID || 'seogfaqf35'}.ufs.sh`
+    ]
+  },
 
   app: {
     head: {
@@ -37,12 +46,19 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.API_BASE_URL || '/api'
+      apiBaseUrl: process.env.API_BASE_URL || '/api',
+      uploadthingUrl: process.env.NUXT_UPLOADTHING_URL || 'https://uploadthing.com',
+      uploadthingAppId: process.env.NUXT_UPLOADTHING_APP_ID || 'seogfaqf35'
     },
-    private: {
-      stripeSecretKey: process.env.STRIPE_SECRET_KEY,
-      clerkSecretKey: process.env.CLERK_SECRET_KEY
-    }
+    stripeSecretKey: process.env.STRIPE_SECRET_KEY,
+    clerkSecretKey: process.env.CLERK_SECRET_KEY,
+    uploadthingSecret: process.env.UPLOADTHING_TOKEN
+  },
+
+  // UploadThing configuration
+  uploadthing: {
+    // Path to your router definition file (optional)
+    // routerPath: '~/server/uploadthing.ts',
   },
 
   compatibilityDate: '2025-03-01',
