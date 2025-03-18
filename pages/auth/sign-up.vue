@@ -3,17 +3,17 @@
 </script>
 
 <template>
-  <div class="auth-container">
-    <SignUp />
-  </div>
+    <div class="auth-container">
+        <SignUp />
+    </div>
 </template>
 
 <style scoped>
 .auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
 }
-</style> 
+</style>
