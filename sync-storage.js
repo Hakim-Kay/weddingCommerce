@@ -11,9 +11,7 @@ dotenv.config()
 const environments = {
     local: {
         url: process.env.LOCAL_SUPABASE_URL || 'http://localhost:54321',
-        serviceKey:
-            process.env.LOCAL_SUPABASE_SERVICE_KEY ||
-            'YOUR_LOCAL_SUPABASE_SERVICE_KEY',
+        serviceKey: process.env.LOCAL_SUPABASE_SERVICE_KEY,
     },
     staging: {
         url: process.env.STAGING_SUPABASE_URL,
@@ -37,6 +35,7 @@ if (
     !environments[sourceEnv].serviceKey
 ) {
     console.error(`Error: Source environment "${sourceEnv}" is not properly configured`)
+    console.error(`Make sure ${sourceEnv.toUpperCase()}_SUPABASE_URL and ${sourceEnv.toUpperCase()}_SUPABASE_SERVICE_KEY are set in your .env file`)
     process.exit(1)
 }
 
@@ -46,6 +45,7 @@ if (
     !environments[targetEnv].serviceKey
 ) {
     console.error(`Error: Target environment "${targetEnv}" is not properly configured`)
+    console.error(`Make sure ${targetEnv.toUpperCase()}_SUPABASE_URL and ${targetEnv.toUpperCase()}_SUPABASE_SERVICE_KEY are set in your .env file`)
     process.exit(1)
 }
 

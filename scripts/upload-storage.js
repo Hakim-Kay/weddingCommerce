@@ -1,6 +1,10 @@
 const { createClient } = require('@supabase/supabase-js')
 const fs = require('fs')
 const path = require('path')
+const dotenv = require('dotenv')
+
+// Load environment variables
+dotenv.config()
 
 // Parse command line arguments
 const args = process.argv.slice(2)
@@ -11,17 +15,22 @@ const env = envArg ? envArg.split('=')[1] : 'local'
 let supabaseUrl, supabaseKey
 
 if (env === 'local') {
-    supabaseUrl = 'http://localhost:54321'
-    supabaseKey =
-        process.env.SUPABASE_LOCAL_KEY ||
-        'YOUR_LOCAL_SUPABASE_ANON_KEY'
+    supabaseUrl = process.env.LOCAL_SUPABASE_URL || 'http://localhost:54321'
+    supabaseKey = process.env.LOCAL_SUPABASE_ANON_KEY
+} else if (env === 'staging') {
+    supabaseUrl = process.env.STAGING_SUPABASE_URL
+    supabaseKey = process.env.STAGING_SUPABASE_ANON_KEY
+} else if (env === 'production') {
+    supabaseUrl = process.env.PRODUCTION_SUPABASE_URL
+    supabaseKey = process.env.PRODUCTION_SUPABASE_ANON_KEY
 } else {
-    supabaseUrl = process.env.SUPABASE_URL
-    supabaseKey = process.env.SUPABASE_KEY
+    console.error(`Unknown environment: ${env}`)
+    process.exit(1)
 }
 
 if (!supabaseUrl || !supabaseKey) {
-    console.error('Missing required environment variables')
+    console.error(`Missing required environment variables for ${env} environment`)
+    console.error(`Make sure ${env.toUpperCase()}_SUPABASE_URL and ${env.toUpperCase()}_SUPABASE_ANON_KEY are set in your .env file`)
     process.exit(1)
 }
 
