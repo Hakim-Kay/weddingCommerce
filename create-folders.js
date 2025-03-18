@@ -1,14 +1,22 @@
 // Script to create folder structure in local Supabase storage
 import { createClient } from '@supabase/supabase-js'
+import dotenv from 'dotenv'
+
+// Load environment variables
+dotenv.config()
 
 // Local Supabase client
-const localSupabaseUrl = 'http://127.0.0.1:54321'
-const localSupabaseKey =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU'
+const localSupabaseUrl = process.env.LOCAL_SUPABASE_URL || 'http://127.0.0.1:54321'
+const localSupabaseKey = process.env.LOCAL_SUPABASE_SERVICE_KEY
+if (!localSupabaseKey) {
+    console.error('Error: LOCAL_SUPABASE_SERVICE_KEY environment variable is not set')
+    console.error('Please make sure it is defined in your .env file')
+    process.exit(1)
+}
 const localSupabase = createClient(localSupabaseUrl, localSupabaseKey)
 
 // Bucket name
-const bucketName = 'Wedding Images'
+const bucketName = process.env.SYNC_BUCKET_NAME || 'Wedding Images'
 
 // Folders to create
 const folders = ['Bachelors', 'Kasiki', 'Miscellaneous', 'Nikah', 'Reception', 'Studio']
